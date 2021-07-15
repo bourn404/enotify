@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-md-5" style="margin:0 auto; float: none;">
+        <div class="panel panel-danger">
+            <div class="panel-heading">
+              <h3 class="panel-title">Send an Emergency Notification</h3>
+            </div>
+            <div class="panel-body">
+              <form #f="ngForm">
+                  <div class="form-group">
+                      <textarea name="message" id="message" class="form-control" rows="5" ngModel required minlength="10"></textarea>
+                      <button 
+                        class="btn btn-default pull-right" 
+                        style="margin: 15px 0 0 0;" 
+                        (click)="onSendEmail(f)"
+                        [disabled]="!f.valid">
+                          Send as Email
+                      </button>
+                      <button 
+                        class="btn btn-default pull-right" 
+                        style="margin: 15px 15px 0 0;" 
+                        (click)="onSendText(f)"
+                        [disabled]="!f.valid">
+                          Send as Text
+                      </button>
+                  </div>
+              </form>
+            </div>
+          </div>
+    </div>
+</div>

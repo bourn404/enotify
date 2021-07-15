@@ -1,0 +1,11 @@
+<div class="row">
+    <div class="col-xs-12">
+        <button class="btn btn-success" (click)="onNewRecipient()">New Recipient</button>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-xs-12">
+        <app-recipient-item *ngFor="let recipient of recipients" [recipient]="recipient"></app-recipient-item>
+    </div>
+</div>

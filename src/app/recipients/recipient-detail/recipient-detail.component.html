@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-xs-12">
+       <h1>{{recipient.name}}</h1> 
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="btn-group" appDropdown>
+            <button type="button" class="btn btn-primary dropdown-toggle">
+                Manage Recipient <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a style="cursor: pointer;" (click)="onEditRecipient()">Edit Recipient</a></li>
+                <li><a style="cursor: pointer;" (click)="onDeleteRecipient()">Delete Recipient</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        {{recipient.email}} <br>
+        {{recipient.phone}} <br>
+        {{recipient.lang}}
+        <hr>
+        <h4>Emergency Notifications:</h4>
+        <ul>
+            <li *ngFor="let notification of recipient.inbox">
+                {{notification.type}} Message: {{notification.content}}
+            </li>
+        </ul>
+    </div>
+</div>
